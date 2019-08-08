@@ -34,15 +34,27 @@
         </div>
     </nav>
 
-    <div style="padding-top:1em;" class="container">
+    <div style="margin-top:1em;margin-bottom:1em;" class="container">
         <div>
             <span style="font-size: 2em; color: #32a5e7;">Books in our Collection</span>
             <span style="float:right;">
-                <a class="btn btn-outline-success btn-lg" href="/elibrary/book/new">Add New Book</a>
+                <a class="btn btn-outline-success btn-lg" href="/elibrary/book/new">Add a new book</a>
             </span>
         </div>
+        <!-- Search panel -->
+        <form id="searchBookForm" method="get" action="/elibrary/book/search">
+            <div style="margin-top:1em;" class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Enter a string to search for books" th:value="${searchString}" autofocus required/>
+                        <div class="input-group-append">
+                            <button id="btnSubmit" type="submit" class="btn btn-outline-success">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
-        <p>&nbsp;</p>
         <div style="font-size: 1em">
             <table class="table table-striped">
                 <thead>
@@ -74,6 +86,9 @@
 <!--                        </button>-->
                     </td>
                 </tr>
+                <tr th:if="${booksCount < 1}">
+                    <td colspan="8" th:align="center">No books found</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -100,12 +115,14 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">O. Kalu : : : CS425-SWE</span>
-            <span style="float:right;" class="text-muted">&copy; August 2019</span>
-        </div>
-    </footer>
+    <p>&nbsp;</p>
+
+<!--    <footer class="footer">-->
+<!--        <div class="container">-->
+<!--            <span class="text-muted">O. Kalu : : : CS425-SWE</span>-->
+<!--            <span style="float:right;" class="text-muted">&copy; August 2019</span>-->
+<!--        </div>-->
+<!--    </footer>-->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

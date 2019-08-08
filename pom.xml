@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.mum.cs.cs425.demos</groupId>
-    <artifactId>elibrary-democrud-web</artifactId>
+    <artifactId>elibrary-democrud-n-search-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>elibrary-democrud-web</name>
-    <description>Demo project for Spring Boot show-casing basic CRUD operations</description>
+    <description>Demo project for Spring Boot show-casing basic CRUD operations and search</description>
 
     <properties>
         <java.version>1.8</java.version>
